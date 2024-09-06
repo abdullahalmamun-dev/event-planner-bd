@@ -7,6 +7,13 @@ import {
 } from "react-router-dom";
 import Root from './components/Root/Root';
 import Home from './components/home/Home';
+import About from './components/about/About';
+import PostFeature from './components/postFeature/PostFeature';
+import Contacts from './components/about/contact/Contacts';
+import FAQs from './components/about/faqs/FAQs';
+import Pricing from './components/about/pricing/Pricing';
+import Journal from './components/journal/Journal';
+import Events from './components/events/Events';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +23,36 @@ const router = createBrowserRouter([
       {
       path: "/",
       element: <Home></Home>,
-
-    }]
+    },
+    {
+      path: "/about",
+      element: <About></About>,
+    },
+    {
+      path: "/postfeature",
+      element: <PostFeature></PostFeature>,
+    },
+    {
+      path: "/about/contact",
+      element: <Contacts></Contacts>,
+    },
+    {
+      path: "/about/faqs",
+      element: <FAQs></FAQs>,
+    },
+    {
+      path: '/about/pricing',
+      element: <Pricing></Pricing>,
+    },
+    {
+      path: '/journal',
+      element: <Journal></Journal>,
+    },
+    {
+      path: '/events',
+      element: <Events></Events>,
+    }
+  ]
   },
 ]);
 
