@@ -13,7 +13,7 @@ const Navbar = () => {
               className="btn btn-ghost lg:hidden"
             ></div>
           </div>
-          <a href="https://imgbb.com/">
+          <a href="/">
             <img           
               src="https://i.ibb.co.com/syGDGKH/images.jpg"
               alt="images"
@@ -58,7 +58,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <button class="btn btn-outline btn-success">Purchase</button>
+          <button className="btn btn-outline btn-success">Purchase</button>
         </div>
       </div>
     </div>
