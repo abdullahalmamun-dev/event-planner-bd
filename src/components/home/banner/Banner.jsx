@@ -2,15 +2,13 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div>
+    <div >
       <div
-        className="hero min-h-screen"
+        className="hero min-h-screen bg-[url(https://ibb.co.com/MM71DXR)]"
         style={{
           backgroundImage:
-            "url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
+            "url()",    }}   >
+        <div className="hero-overlay bg-opacity-30"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
