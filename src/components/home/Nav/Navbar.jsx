@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar fixed bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
         <div className="navbar-start">
           <div className="dropdown">
             <div

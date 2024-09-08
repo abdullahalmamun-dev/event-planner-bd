@@ -7,17 +7,17 @@ const Banner = () => {
         className="hero min-h-screen"
         style={{
           backgroundImage:
-            "url(https://i.ibb.co.com/Lx04Hq2/cool-background.png)",
+            "url(https://i.ibb.co.com/myynPHq/diamond-sunset.png)",
         }}
       >
         <div className="hero-overlay bg-opacity-0"></div>
-        <div className="hero-content text-neutral-content">
+        <div className="hero-content text-neutral-content my-40">
           <div className="flex gap-20 text-black  ">
-            <div className="w-1/2	pr-10">
-              <p className="font-black	text-8xl	text-center">
+            <div className="w-1/2	mt-28 ">
+              <p className="font-black	text-7xl	text-center">
                 The Mystery of the Ordinary Place.
               </p>
-              <p className="text-2xl	">
+              <p className="text-2xl mt-5">
                 Entries are open to all artists, designers and studios to submit
                 work for the chance to take part in the exclusive exhibition
                 being held in Hong Kong From the 2nd to the 7th December 2021.
@@ -66,17 +66,9 @@ const Banner = () => {
               </div>
             </div>
           </div>
-          {/* <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button className="btn btn-primary">Get Started</button>
-          </div> */}
         </div>
       </div>
+      
     </div>
   );
 };
