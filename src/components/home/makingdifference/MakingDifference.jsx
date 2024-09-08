@@ -2,8 +2,8 @@ import React from 'react';
 
 const MakingDifference = () => {
     return (
-        <div className='flex gap-20 h-screen  mx-[200px] my-40'>
-            <div className='w-1/2 border-8 border-solid border-base-950 p-16'>
+        <div className='flex gap-20 h-screen  mx-[400px] my-20'>
+            <div className='w-1/2 border-8 border-solid border-base-950 px-32 pt-32'>
                 <p className='text-sm pb-8 '>Culture impacts our life, economy and living.
                 </p>
                 <p className='text-5xl font-black'>Making a difference
@@ -18,7 +18,7 @@ const MakingDifference = () => {
             </div>
             <div>
                 <div className='relative'>
-                    <img className=' h-[487px] w-[461px]' src="https://i.ibb.co.com/JsxTfcV/rembrandt-harmenszoon-van-rijn-67621-1920.jpg" alt="" />
+                    <img className=' h-[587px] w-[461px]' src="https://i.ibb.co.com/JsxTfcV/rembrandt-harmenszoon-van-rijn-67621-1920.jpg" alt="" />
                         <div className=' absolute bottom-[-200px] left-[-150px]'>
                             <img className='border-8 border-solid border-stone-50 top-0 h-[300px] w-[440px] ' src="https://i.ibb.co.com/0sbScWy/woman-3113673-1920.jpg" alt="" />
                         </div>
