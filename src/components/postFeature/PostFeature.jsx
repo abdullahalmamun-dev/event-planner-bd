@@ -5,6 +5,7 @@ import Footer from '../home/footer/Footer';
 const PostFeature = () => {
     return (
         <div>
+            
             <Navbar></Navbar>
             <Footer></Footer>
         </div>
