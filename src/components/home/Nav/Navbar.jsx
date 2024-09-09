@@ -4,21 +4,21 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar ">
+      <div className="navbar bg-base-100">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown lg:hidden">
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost lg:hidden"
+              className="btn btn-ghost"
             ></div>
           </div>
           <a href="/">
-            <img           
+            <img
               src="https://i.ibb.co.com/syGDGKH/images.jpg"
               alt="images"
               border="0"
-              className="w-24 rounded"
+              className="w-24 rounded lg:w-32"
             />
           </a>
         </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-outline btn-success">Purchase</button>
+          <button className="btn btn-outline btn-success lg:btn-md">Purchase</button>
         </div>
       </div>
     </div>

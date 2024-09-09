@@ -4,32 +4,32 @@ const Banner = () => {
   return (
     <div>
       <div
-        className="hero min-h-screen"
+        className="hero min-h-screen lg:min-h-screen xl:min-h-screen"
         style={{
           backgroundImage:
             "url(https://i.ibb.co.com/myynPHq/diamond-sunset.png)",
         }}
       >
         <div className="hero-overlay bg-opacity-0"></div>
-        <div className="hero-content text-neutral-content my-40">
-          <div className="flex gap-20 text-black  ">
-            <div className="w-1/2	mt-28 ">
-              <p className="font-black	text-7xl	text-center">
+        <div className="hero-content text-neutral-content my-40 lg:my-20 xl:my-10">
+          <div className="flex flex-wrap gap-20 text-black  lg:flex-nowrap xl:flex-nowrap">
+            <div className="w-full lg:w-1/2 xl:w-1/2 mt-28 lg:mt-20 xl:mt-10">
+              <p className="font-black	text-7xl	text-center lg:text-5xl xl:text-4xl">
                 The Mystery of the Ordinary Place.
               </p>
-              <p className="text-2xl mt-5">
+              <p className="text-2xl mt-5 lg:text-xl xl:text-lg">
                 Entries are open to all artists, designers and studios to submit
                 work for the chance to take part in the exclusive exhibition
                 being held in Hong Kong From the 2nd to the 7th December 2021.
               </p>
             </div>
-            <div className="w-1/2 max-h-full pl-20 ">
-              <div className="overflow-x-auto">
-                <table className="border-collapse	table mt-20 text-center">
+            <div className="w-full lg:w-1/2 xl:w-1/2 pl-20 lg:pl-10 xl:pl-5">
+              <div className="overflow-x-auto lg:overflow-x-hidden xl:overflow-x-hidden">
+                <table className="border-collapse	table mt-20 text-center lg:table-sm xl:table-xs">
                   {/* head */}
 
                   <tbody>
-                  <tr>
+                    <tr>
                       <td  className="font-black">Day</td>
                       <td>Opening Hours</td>
                     </tr>
@@ -68,7 +68,6 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

@@ -14,6 +14,8 @@ import FAQs from './components/about/faqs/FAQs';
 import Pricing from './components/about/pricing/Pricing';
 import Journal from './components/journal/Journal';
 import Events from './components/events/Events';
+import EventDetails from './components/events/EventDetails';
+import Login from './components/login/Login';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
     {
       path: '/events',
       element: <Events></Events>,
+    },
+    {
+      path: '/events/:id',
+      element: <EventDetails></EventDetails>,
+    },
+    {
+      path: '/login',
+      element: <Login></Login>,
     }
   ]
   },
