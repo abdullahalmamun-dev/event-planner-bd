@@ -28,7 +28,7 @@ const Events = () => {
         <div>
             <Navbar></Navbar>
             <div
-        className="hero min-h-screen lg:min-h-screen xl:min-h-screen"
+        className="h-1/2 bg-cover bg-center"
         style={{
           backgroundImage:
             "url(https://i.ibb.co.com/xHHgJjj/pexels-daian-gan-102127-1300x600.jpg)",

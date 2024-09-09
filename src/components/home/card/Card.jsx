@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="h-screen p-4 sm:p-6 md:p-16 lg:p-24 xl:p-32 bg-slate-100">
+    <div className="h-max-content p-4 sm:p-6 md:p-16 lg:p-24 xl:p-32 bg-slate-100">
       <div className="p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16">
         <p className="text-5xl sm:text-6xl md:text-5xl lg:text-6xl xl:text-7xl font-black">
           WHAT'S ON
@@ -92,6 +92,7 @@ const Card = () => {
             DETAILS
           </button>
         </div>
+        
       </div>
     </div>
   );

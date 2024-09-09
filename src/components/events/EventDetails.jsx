@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Navbar from '../home/Nav/Navbar';
+import Footer from '../home/footer/Footer';
 
 const ArticleDetail = () => {
   const { id } = useParams(); 
@@ -24,11 +26,13 @@ const ArticleDetail = () => {
 
   return (
     <div>
+      <Navbar></Navbar>
       <h1>{article.title}</h1>
       <p>{article.article}</p>
       <p><strong>Category:</strong> {article.category}</p>
       <img src={article.picture} alt={article.title} />
       <p><strong>Date:</strong> {article.date}</p>
+      <Footer></Footer>
     </div>
   );
 };

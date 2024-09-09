@@ -2,7 +2,7 @@ import React from 'react';
 
 const MakingDifference = () => {
   return (
-    <div className="h-dvh	flex flex-wrap gap-20 h-screen mx-4 sm:mx-6 md:mx-16 lg:mx-24 xl:mx-32 my-4 sm:my-6 md:my-8 lg:my-10 xl:my-12">
+    <div className="h-max-content	flex flex-wrap gap-20 h-screen mx-4 sm:mx-6 md:mx-16 lg:mx-24 xl:mx-32 my-4 sm:my-6 md:my-8 lg:my-10 xl:my-12">
       <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2 border-8 border-solid border-base-950 px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-4 sm:pt-6 md:pt-8 lg:pt-10 xl:pt-12">
         <p className="text-sm pb-4 sm:pb-6 md:pb-8 lg:pb-10 xl:pb-12">Culture impacts our life, economy and living.</p>
         <p className="text-5xl font-black sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">Making a difference</p>
