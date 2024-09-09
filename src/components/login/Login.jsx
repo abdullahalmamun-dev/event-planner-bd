@@ -2,10 +2,13 @@ import React, { useContext } from "react";
 import Navbar from "../home/Nav/Navbar";
 import Footer from "../home/footer/Footer";
 import { AuthContext } from "../../providers/Authprovider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Login = () => {
 
+  const location = useLocation();
+  const navigate = useNavigate();
   const {signIn} = useContext(AuthContext);
 
   const handleLogin = e => {
@@ -16,7 +19,8 @@ const Login = () => {
     
     signIn(email, password)
     .then(result =>{
-      console.log("User signed in successfully!");
+
+      navigate(location ?.state ? location.state : '/' )
     })
     .catch(error =>{
       console.error(error.message);

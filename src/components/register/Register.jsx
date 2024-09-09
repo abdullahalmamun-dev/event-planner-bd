@@ -2,8 +2,12 @@ import React, { useContext } from "react";
 import Navbar from "../home/Nav/Navbar";
 import Footer from "../home/footer/Footer";
 import { AuthContext } from "../../providers/Authprovider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const { createUser } = useContext(AuthContext);
 
   const handleRegister = async (e) => {
@@ -12,11 +16,11 @@ const Register = () => {
     const name = formData.get("name");
     const email = formData.get("email");
     const password = formData.get("password");
-    console.log(email, name, password);
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+
       })
       .catch((error) => {
         console.error(error.message);

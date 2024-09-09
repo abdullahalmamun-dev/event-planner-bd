@@ -15,6 +15,7 @@ import EventDetails from "./components/events/EventDetails";
 import Login from "./components/login/Login";
 import Authprovider from "./providers/Authprovider";
 import Register from "./components/register/Register";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -47,15 +48,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/journal",
-        element: <Journal></Journal>,
+        element: <PrivateRoute><Journal></Journal></PrivateRoute>,
       },
       {
         path: "/events",
-        element: <Events></Events>,
+        element: <PrivateRoute><Events></Events></PrivateRoute>,
       },
       {
         path: "/events/:id",
-        element: <EventDetails></EventDetails>,
+        element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
       },
       {
         path: "/login",
