@@ -43,8 +43,14 @@ const Footer = () => {
           <NavLink className="link link-hover">The creation of a mural; the Royal Hotel</NavLink>
 
         </nav>
+        
       </footer>
-    </div>
+      <div className="copyright text-center py-5 text-sm text-gray-500 justify-left">
+        © 2021 Culture Press. All rights reserved.
+      </div>
+      
+  
+      </div>
   );
 };
 
