@@ -8,7 +8,7 @@ const Banner = () => {
     "/3.jpg",
     "4.jpg",
     "banner.jpg",
-    "shardayyy-photography-fJzmPe-a0eU-unsplash",
+    "shardayyy-photography-fJzmPe-a0eU-unsplash.jpg",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

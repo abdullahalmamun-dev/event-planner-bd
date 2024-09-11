@@ -1,9 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/Authprovider";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [articles, setArticles] = useState([]);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("Events.json")
@@ -21,19 +25,34 @@ const Navbar = () => {
       });
   }, []);
 
-  const [showDropdown, setShowDropdown] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
-
   const handleLogout = () => {
     logOut();
   };
+
   return (
-    <div className="bg-[#003366]">
+    <div className="bg-[#003366] px-10">
       <nav className="flex flex-col md:flex-row md:justify-between items-center mx-auto text-lg text-[#FFD700] p-4">
+        {/* Logo */}
         <div className="flex items-center mx-auto md:mx-0 mb-4 md:mb-0">
           <img src="logo.png" className="w-20" alt="Logo" />
         </div>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-10 mb-4 md:mb-0 relative">
+
+        {/* Hamburger Icon for Mobile */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            className="text-[#FFD700] focus:outline-none"
+          >
+            {showMobileMenu ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
+
+        {/* Navigation Links */}
+        <div
+          className={`flex md:flex-nowrap flex-col md:flex-row gap-4 md:gap-10 mb-4 md:mb-0 relative ${
+            showMobileMenu ? "block" : "hidden md:flex"
+          }`}
+        >
           <Link to={"/"} className="hover:text-white transition duration-200">
             HOME
           </Link>
@@ -74,9 +93,6 @@ const Navbar = () => {
                     {article.title}
                   </Link>
                 ))}
-                <Link className="block px-6 py-3 hover:bg-[#004080]">
-                  Upcoming Events
-                </Link>
               </div>
             )}
           </div>
@@ -99,21 +115,25 @@ const Navbar = () => {
             CONTACT US
           </Link>
         </div>
-        {user ? (
-          <button
-            onClick={handleLogout}
-            className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200"
-          >
-            SIGN OUT
-          </button>
-        ) : (
-          <Link
-            className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200"
-            to={"/login"}
-          >
-            SIGN IN
-          </Link>
-        )}
+
+        {/* Sign In / Sign Out Button */}
+        <div className="flex justify-center mb-4">
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200"
+            >
+              SIGN OUT
+            </button>
+          ) : (
+            <Link
+              className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200"
+              to={"/login"}
+            >
+              SIGN IN
+            </Link>
+          )}
+        </div>
       </nav>
     </div>
   );

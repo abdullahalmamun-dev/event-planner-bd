@@ -1,4 +1,3 @@
-
 [
   {
     "id": 1,
@@ -10,15 +9,6 @@
     "time": "09:00 AM"
   },
   {
-    "id": 2,
-    "title": "Exploring the Depths of the Ocean through Photography",
-    "article": "Underwater photography offers a unique glimpse into the mesmerizing world beneath the waves. This article explores the techniques and challenges faced by photographers who capture the beauty of marine life. From the vibrant colors of coral reefs to the majestic movements of large marine animals, underwater photography requires specialized equipment and skills. We will discuss the importance of understanding marine ecosystems and the role of photography in conservation efforts. Notable photographers like David Doubilet have dedicated their careers to showcasing the wonders of the ocean, raising awareness about environmental issues through their stunning imagery. The article will also cover tips for aspiring underwater photographers, including gear recommendations and safety precautions. As we delve into the depths of the ocean, we uncover the beauty and fragility of this vital ecosystem, emphasizing the need for its protection.",
-    "category": "Photography",
-    "picture": "https://example.com/ocean-photography.jpg",
-    "date": "Oct 8 - Oct 14",
-    "time": "10:30 AM"
-  },
-  {
     "id": 3,
     "title": "The Art of Storytelling through Dance",
     "article": "Dance is a universal language that transcends cultural barriers, allowing artists to tell stories through movement. This article explores the various forms of dance and how they convey emotions and narratives. From ballet to hip-hop, each style has its unique vocabulary that dancers use to express themselves. We will examine the role of choreography in storytelling, highlighting the works of renowned choreographers such as Martha Graham and Alvin Ailey. Additionally, we will discuss the significance of dance in cultural expression and social commentary, as seen in performances that address issues like identity and inequality. The article will also feature interviews with dancers who share their experiences of using dance as a medium for storytelling. As we explore the art of dance, we discover its power to connect people and evoke deep emotional responses.",
@@ -26,15 +16,6 @@
     "picture": "https://example.com/dance-performance.jpg",
     "date": "Oct 15 - Oct 21",
     "time": "12:00 PM"
-  },
-  {
-    "id": 4,
-    "title": "Exploring the Enchanting World of Botanical Art",
-    "article": "Botanical art is a fascinating intersection of art and science, where artists meticulously depict plants and flowers with precision and beauty. This article delves into the history of botanical art, tracing its origins from ancient civilizations to contemporary practices. We will explore the techniques used by botanical artists, including watercolor, ink, and digital methods. Notable artists like Pierre-Joseph Redouté have made significant contributions to this genre, creating detailed illustrations that serve both aesthetic and scientific purposes. The article will also discuss the role of botanical art in conservation efforts, as artists document endangered species and promote awareness of biodiversity. Interviews with contemporary botanical artists will provide insights into their creative processes and the challenges they face in capturing the essence of nature. As we explore the enchanting world of botanical art, we gain a deeper appreciation for the beauty and complexity of the plant kingdom.",
-    "category": "Art",
-    "picture": "https://example.com/botanical-art.jpg",
-    "date": "Oct 22 - Oct 28",
-    "time": "01:30 PM"
   },
   {
     "id": 5,
@@ -55,30 +36,10 @@
     "time": "04:30 PM"
   },
   {
-    "id": 7,
-    "title": "The Enduring Legacy of Impressionist Painting",
-    "article": "Impressionism revolutionized the art world in the late 19th century, breaking away from traditional techniques to capture the fleeting moments of light and color. This article explores the key characteristics of Impressionist painting, including loose brushwork and an emphasis on everyday subjects. We will discuss the works of iconic artists such as Claude Monet, Edgar Degas, and Pierre-Auguste Renoir, examining how their innovative approaches changed the course of art history. The article will also delve into the social and cultural context of the Impressionist movement, highlighting the artists' responses to the rapid changes occurring in society during their time. By analyzing the enduring legacy of Impressionism, we gain insight into its influence on modern art and its continued relevance in contemporary artistic practices.",
-    "category": "Art",
-    "picture": "https://example.com/impressionist-painting.jpg",
-    "date": "Nov 15 - Nov 21",
-    "time": "06:00 PM"
-  },
-  {
-    "id": 8,
-    "title": "The Captivating World of Surrealist Photography",
-    "article": "Surrealist photography invites viewers into a dreamlike realm where reality and imagination intertwine. This article explores the origins and evolution of Surrealist photography, highlighting key figures such as Man Ray and Dora Maar. We will examine the techniques used by these artists to create striking and thought-provoking images that challenge conventional perceptions. The article will delve into the themes of surrealism, including the exploration of the subconscious and the juxtaposition of unexpected elements. Interviews with contemporary photographers influenced by surrealism will provide insights into how they incorporate these ideas into their work. As we navigate the captivating world of Surrealist photography, we uncover the power of imagination and the ways it can reshape our understanding of reality.",
-    "category": "Photography",
-    "picture": "https://example.com/surrealist-photography.jpg",
-    "date": "Nov 22 - Nov 28",
-    "time": "07:45 PM"
-  },
-  {
     "id": 9,
     "title": "The Allure of Abstract Expressionism",
     "article": "Abstract Expressionism emerged in the mid-20th century as a revolutionary movement that prioritized emotion and spontaneity over representational forms. This article examines the key characteristics of Abstract Expressionism, including the use of bold colors and gestural brushwork. We will explore the works of influential artists such as Jackson Pollock, Mark Rothko, and Willem de Kooning, analyzing how their unique styles contributed to the movement's development. The article will also discuss the cultural and historical context in which Abstract Expressionism flourished, including the post-war sentiments that shaped its themes. By exploring the allure of Abstract Expressionism, we gain insight into its impact on contemporary art and its lasting legacy in the art world.",
-    "category":
-
- "Art",
+    "category": "Art",
     "picture": "https://example.com/abstract-expressionism.jpg",
     "date": "Dec 1 - Dec 7",
     "time": "08:15 PM"

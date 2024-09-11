@@ -12,7 +12,7 @@ const Home = () => {
       {/* <Navbar></Navbar> */}
       {/* <Banner></Banner> */}
       {/* <MakingDifference></MakingDifference> */}
-      {/* <Card></Card> */}
+      <Card></Card>
       {/* <Footer></Footer> */}
     </div>
   );
