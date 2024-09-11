@@ -24,7 +24,7 @@ const Banner = () => {
   return (
     <div
       className="slider w-full relative overflow-hidden"
-      style={{ height: "75vh" }}
+      style={{ height: "100vh" }}
     >
       {images.map((image, index) => (
         <img

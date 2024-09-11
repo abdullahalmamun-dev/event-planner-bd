@@ -9,8 +9,8 @@ import Login from "../login/Login";
 const Home = () => {
   return (
     <div>
-      {/* <Navbar></Navbar> */}
-      {/* <Banner></Banner> */}
+      <Navbar></Navbar>
+      <Banner></Banner>
       {/* <MakingDifference></MakingDifference> */}
       <Card></Card>
       {/* <Footer></Footer> */}

@@ -2,17 +2,17 @@ import React from "react";
 
 const Card = () => {
   return (
-    <div className="bg-[#003366] text-[#FFD700] p-6 md:p-10">
-      <div className="mb-6 md:mb-10">
-        <h2 className="text-2xl md:text-3xl font-extrabold mb-2">
+    <div className="bg-[#003366] text-[#FFD700] p-6 md:p-10 md:h-[100vh]">
+      <div className="mb-6 md:mb-24 text-center mt-20">
+        <h2 className="text-2xl md:text-5xl font-extrabold mb-2">
           How Meeton can help your business to grow
         </h2>
-        <p className="text-lg md:text-xl">
+        <p className="text-lg md:text-2xl">
           Whatever the level of support you require, we are sure that we will
           have a package that meets your needs.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 h-[75vh]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 md:px-20 ">
         <div className="bg-[#F5F5F5] text-[#003366] p-6 rounded-lg flex flex-col items-center justify-between shadow-lg transition-transform transform hover:scale-105">
           <img src="icon1.png" alt="" className="mb-4" />
           <h3 className="text-lg font-extrabold mb-2">Money Back Guarantee</h3>
