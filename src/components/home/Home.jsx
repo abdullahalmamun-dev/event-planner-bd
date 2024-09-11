@@ -13,7 +13,7 @@ const Home = () => {
       <Banner></Banner>
       {/* <MakingDifference></MakingDifference> */}
       <Card></Card>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 };

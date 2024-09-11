@@ -1,56 +1,51 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer bg-base-300 text-base-content p-20 ">
-        <nav>
-          <p className="text-5xl font-black	text-black footer-title">Our Monthly Newsletter</p>
-          <p className="text-xl py-5">Sign up for our weekly tips, skills, gear and interestng newsletters.</p>
-          <input
-            type="text"
-            placeholder="Your email address"
-            className="input input-bordered w-full max-w-xs"
-          />
-        </nav>
-        <nav>
-          <h6 className="footer-title">GOOD TO KNOW</h6>
-          <NavLink className="link link-hover">Home</NavLink>
-          <NavLink className="link link-hover">Journal</NavLink>
-          <NavLink className="link link-hover">Our Themes</NavLink>
-          <NavLink className="link link-hover">Purchase</NavLink>
-        </nav>
-
-        <nav>
-          <h6 className="footer-title">CATEGORIES</h6>
-          <NavLink className="link link-hover">Architecture</NavLink>
-          <NavLink className="link link-hover">Design</NavLink>
-          <NavLink className="link link-hover">Fashion</NavLink>
-          <NavLink className="link link-hover">Featured</NavLink>
-          <NavLink className="link link-hover">Lifestyle</NavLink>
-          <NavLink className="link link-hover">Paintings</NavLink>
-          <NavLink className="link link-hover">Photography</NavLink>
-          <NavLink className="link link-hover">Urban</NavLink>
-        </nav>
-
-        <nav>
-          <h6 className="footer-title">Recent Posts</h6>
-          <NavLink className="link link-hover">5 Contemporary Tattoo Artists That You Will Love</NavLink>
-          <NavLink className="link link-hover">Born to design & produce</NavLink>
-          <NavLink className="link link-hover">Painting from nature is not copying the object; it is realizing one’s sensations.</NavLink>
-          <NavLink className="link link-hover">14 Things You Didn’t Know About the Mona Lisa</NavLink>
-          <NavLink className="link link-hover">The creation of a mural; the Royal Hotel</NavLink>
-
-        </nav>
-        
-      </footer>
-      <div className="copyright text-center py-5 text-sm text-gray-500 justify-left">
-        © 2021 Culture Press. All rights reserved.
+    <div className="">
+      <div>
+        <div className="bg-gradient-to-r from-[#003366] to-[#003366] py-16 text-center">
+          <h2 className="text-2xl uppercase tracking-widest text-[#FFD700] pb-10">
+            Subscribe to Newsletter
+          </h2>
+          <h1 className="text-3xl font-bold mt-2 text-[#F5F5F5]">
+            Want something extra?
+          </h1>
+          <div className="mt-6 flex justify-center">
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="px-4 py-2 rounded-l-md border-none focus:outline-none text-black"
+            />
+            <button className="bg-[#FFD700] text-[#003366] px-6 py-2 rounded-r-md">
+              Subscribe
+            </button>
+          </div>
+        </div>
+        <footer className="bg-[#002244] py-8">
+          <div className="text-center text-[#F5F5F5] space-x-4">
+            <a href="/about" className="hover:text-[#FFD700]">
+              About Cultre Press
+            </a>
+            <span>&bull;</span>
+            <a href="/faqs" className="hover:text-[#FFD700]">
+              FAQs
+            </a>
+            <span>&bull;</span>
+            <a href="/contact" className="hover:text-[#FFD700]">
+              Contact
+            </a>
+            <span>&bull;</span>
+            <a href="/login" className="hover:text-[#FFD700]">
+              Login
+            </a>
+          </div>
+        </footer>
+        <div className="text-[#F5F5F5] copyright text-center py-5 text-sm justify-left bg-gradient-to-r from-[#003366] to-[#003366]">
+          © 2025 Culture Press. All rights reserved. Developed By Emperal Tech.
+        </div>
       </div>
-      
-  
-      </div>
+    </div>
   );
 };
 
