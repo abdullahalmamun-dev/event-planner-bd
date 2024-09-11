@@ -1,123 +1,120 @@
-import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/Authprovider";
 
 const Navbar = () => {
+  const [articles, setArticles] = useState([]);
 
-  const {user, logOut} = useContext(AuthContext);
+  useEffect(() => {
+    fetch("Events.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setArticles(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  const [showDropdown, setShowDropdown] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
     logOut();
-  }
+  };
   return (
-    <div>
-      <div className="navbar bg-base-100 px-10">
-        <div className="navbar-start">
-          <div className="dropdown lg:hidden">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+    <div className="bg-[#003366]">
+      <nav className="flex flex-col md:flex-row md:justify-between items-center mx-auto text-lg text-[#FFD700] p-4">
+        <div className="flex items-center mx-auto md:mx-0 mb-4 md:mb-0">
+          <img src="logo.png" className="w-20" alt="Logo" />
+        </div>
+        <div className="flex flex-col md:flex-row gap-4 md:gap-10 mb-4 md:mb-0 relative">
+          <Link to={"/"} className="hover:text-white transition duration-200">
+            HOME
+          </Link>
+          <Link
+            to={"/journal"}
+            className="hover:text-white transition duration-200"
+          >
+            JOURNAL
+          </Link>
+          <div className="relative">
+            <button
+              className="hover:text-white transition duration-200 flex items-center"
+              onClick={() => setShowDropdown(!showDropdown)}
+            >
+              EVENTS
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+                className={`h-4 w-4 ml-2 transition duration-200 ${
+                  showDropdown ? "transform rotate-180" : ""
+                }`}
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
+                  fillRule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clipRule="evenodd"
                 />
               </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content  p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <NavLink to={"/"}>Home</NavLink>
-              </li>
-              <li>
-              <details>
-                <summary>Events</summary>
-                <ul className="p-2">
-                  <li>
-                    <NavLink to={"/about"}>About Us</NavLink>
-                  </li>
-                </ul>
-              </details>
-            </li>
-              <li>
-                <NavLink to={"/journal"}>Journal</NavLink>
-              </li>
-              <li>
-                    <NavLink to={"/about/faqs"}>Faqs</NavLink>
-            </li>
-            <li>
-                <NavLink to={"/about"}>About Us</NavLink>
-            </li>
-            <li>
-                    <NavLink to={"/about/contact"}>Contact Us</NavLink>
-            </li>
-            </ul>
-          </div>
-          <a href="/">
-            <img
-              src="logo.png"
-              alt="images"
-              border="0"
-              className="w-12 rounded lg:w-16 box-border"
-            />
-          </a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <NavLink to={"/"}>Home</NavLink>
-            </li>
-            <li>
-              <details>
-                <summary>Events</summary>
-                <ul className="p-2">
-                  <li>
-                    <NavLink to={"/about"}>About Us</NavLink>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <NavLink to={"/journal"}>Journal</NavLink>
-            </li>
-            <li>
-                    <NavLink to={"/about/faqs"}>Faqs</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/about"}>About Us</NavLink>
-            </li>
-            <li>
-                    <NavLink to={"/about/contact"}>Contact Us</NavLink>
-            </li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          {
-            user ?
-            <button onClick={handleLogout}
-            className="btn btn-outline btn-success lg:btn-md md:btn-sm sm:btn-xs"
-          >
-            Log Out
             </button>
-
-            :
-            <NavLink
-            className="btn btn-outline bg-yellow-700 text-indigo-50	 lg:btn-md md:btn-sm sm:btn-xs"
+            {showDropdown && (
+              <div className="absolute bg-[#003366] rounded-md shadow-lg mt-2 w-64 z-10 py-2">
+                {articles.map((article) => (
+                  <Link
+                    key={article.id}
+                    className="block px-6 py-3 hover:bg-[#004080]"
+                    to={`/events/${article.id}`}
+                  >
+                    {article.title}
+                  </Link>
+                ))}
+                <Link className="block px-6 py-3 hover:bg-[#004080]">
+                  Upcoming Events
+                </Link>
+              </div>
+            )}
+          </div>
+          <Link
+            to={"/faqs"}
+            className="hover:text-white transition duration-200"
+          >
+            FAQS
+          </Link>
+          <Link
+            to={"/about"}
+            className="hover:text-white transition duration-200"
+          >
+            ABOUT US
+          </Link>
+          <Link
+            to={"/contact"}
+            className="hover:text-white transition duration-200"
+          >
+            CONTACT US
+          </Link>
+        </div>
+        {user ? (
+          <button
+            onClick={handleLogout}
+            className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200"
+          >
+            SIGN OUT
+          </button>
+        ) : (
+          <Link
+            className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200"
             to={"/login"}
           >
-            Login
-          </NavLink>
-          }
-        </div>
-      </div>
+            SIGN IN
+          </Link>
+        )}
+      </nav>
     </div>
   );
 };

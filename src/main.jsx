@@ -31,32 +31,36 @@ const router = createBrowserRouter([
         element: <About></About>,
       },
       {
-        path: "/postfeature",
-        element: <PostFeature></PostFeature>,
-      },
-      {
-        path: "/about/contact",
+        path: "/contact",
         element: <Contacts></Contacts>,
       },
       {
-        path: "/about/faqs",
+        path: "/faqs",
         element: <FAQs></FAQs>,
       },
       {
-        path: "/about/pricing",
-        element: <Pricing></Pricing>,
-      },
-      {
         path: "/journal",
-        element: <PrivateRoute><Journal></Journal></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Journal></Journal>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/events",
-        element: <PrivateRoute><Events></Events></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Events></Events>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/events/:id",
-        element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <EventDetails></EventDetails>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",

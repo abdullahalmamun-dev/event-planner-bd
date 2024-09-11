@@ -1,69 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FaCalendarAlt, FaUsers, FaMapMarkerAlt } from "react-icons/fa";
 
 const Banner = () => {
-  return (
-    <div>
-      <div
-        className="hero min-h-screen lg:min-h-screen xl:min-h-screen"
-        style={{
-          backgroundImage:
-            "url(pablo-heimplatz-ZODcBkEohk8-unsplash.jpg)",
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-neutral-content my-20 lg:my-20 xl:my-10">
-          <div className="flex flex-wrap gap-0 md:gap-20 text-black  lg:flex-nowrap xl:flex-nowrap justify-center items-center">
-            <div className="w-full lg:w-1/2 xl:w-1/2 mt-10 lg:mt-20 xl:mt-10">
-              <p className="font-black	text-7xl	text-center lg:text-5xl xl:text-4xl text-white	">
-                The Mystery of the Ordinary Place.
-              </p>
-              <p className="text-2xl mt-5 lg:text-xl xl:text-lg text-white text-center	">
-                Entries are open to all artists, designers and studios to submit
-                work for the chance to take part in the exclusive exhibition
-                being held in Hong Kong From the 2nd to the 7th December 2021.
-              </p>
-            </div>
-            <div className="w-full lg:w-1/2 xl:w-1/2 lg:pl-10 xl:pl-5">
-              <div className="overflow-x-auto lg:overflow-x-hidden xl:overflow-x-hidden">
-                <table className="border-collapse	table mt-20 text-center lg:table-sm xl:table-xs text-white text-lg	">
-                  {/* head */}
+  const images = [
+    "/1.jpg",
+    "/2.jpg",
+    "/3.jpg",
+    "4.jpg",
+    "banner.jpg",
+    "shardayyy-photography-fJzmPe-a0eU-unsplash",
+  ];
 
-                  <tbody>
-                    <tr>
-                      <td  className="font-black ">Day</td>
-                      <td>Opening Hours</td>
-                    </tr>
-                    <tr className="">
-                      <th>Monday</th>
-                      <td>Closed</td>
-                    </tr>
-                    <tr>
-                      <th>Tuesday</th>
-                      <td>8:00 AM - 7:00 PM</td>
-                    </tr>
-                    <tr>
-                      <th>Wednesday</th>
-                      <td>8:00 AM - 7:00 PM</td>
-                    </tr>
-                    <tr>
-                      <th>Thursday</th>
-                      <td>8:00 AM - 7:00 PM</td>
-                    </tr>
-                    <tr>
-                      <th>Friday</th>
-                      <td>8:00 AM - 9:00 PM</td>
-                    </tr>
-                    <tr>
-                      <th>Saturday</th>
-                      <td>9:00 AM - 9:00 PM</td>
-                    </tr>
-                    <tr>
-                      <th>Sunday</th>
-                      <td>9:00 AM - 9:00 PM</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [images.length]);
+
+  return (
+    <div
+      className="slider w-full relative overflow-hidden"
+      style={{ height: "75vh" }}
+    >
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          className={`slide absolute w-full h-full object-cover transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
+          alt={`Slide ${index + 1}`}
+        />
+      ))}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="bg-[#003366] bg-opacity-80 p-10 rounded-lg">
+          <h2 className="text-3xl text-[#FFD700] text-center font-bold mb-4">
+            Plan Your Perfect Event
+          </h2>
+          <div className="flex justify-center space-x-10">
+            <div className="flex flex-col items-center text-white">
+              <FaCalendarAlt className="text-4xl mb-4" />
+              <span>Event Scheduling</span>
+            </div>
+            <div className="flex flex-col items-center text-white">
+              <FaUsers className="text-4xl mb-4" />
+              <span>Guest Management</span>
+            </div>
+            <div className="flex flex-col items-center text-white">
+              <FaMapMarkerAlt className="text-4xl mb-4" />
+              <span>Venue Selection</span>
             </div>
           </div>
         </div>
