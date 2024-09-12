@@ -5,7 +5,7 @@ const Card = () => {
     <div className="bg-[#003366] text-[#FFD700] p-6 md:p-10 md:h-[100vh] my-auto">
       <div className="mb-6 md:mb-24 text-center mt-20">
         <h2 className="text-2xl md:text-5xl font-extrabold mb-2">
-          How Meeton can help your business to grow
+          How Culture Press can help your business to grow
         </h2>
         <p className="text-lg md:text-2xl">
           Whatever the level of support you require, we are sure that we will

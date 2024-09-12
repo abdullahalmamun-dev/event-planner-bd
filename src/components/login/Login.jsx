@@ -1,35 +1,28 @@
 import React, { useContext } from "react";
-import Navbar from "../home/Nav/Navbar";
-import Footer from "../home/footer/Footer";
 import { AuthContext } from "../../providers/Authprovider";
 import { useLocation, useNavigate } from "react-router-dom";
 
-
 const Login = () => {
-
   const location = useLocation();
   const navigate = useNavigate();
-  const {signIn} = useContext(AuthContext);
+  const { signIn } = useContext(AuthContext);
 
-  const handleLogin = e => {
-    e.preventDefault(); 
+  const handleLogin = (e) => {
+    e.preventDefault();
     const formData = new FormData(e.target);
-    const email = formData.get('email'); 
-    const password = formData.get('password'); 
-    
-    signIn(email, password)
-    .then(result =>{
+    const email = formData.get("email");
+    const password = formData.get("password");
 
-      navigate(location ?.state ? location.state : '/' )
-    })
-    .catch(error =>{
-      console.error(error.message);
-    });
-  }
+    signIn(email, password)
+      .then((result) => {
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
   return (
     <div>
-      <Navbar></Navbar>
-
       <div
         className="hero h-1/2 lg:min-h-screen xl:min-h-screen"
         style={{
@@ -90,7 +83,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

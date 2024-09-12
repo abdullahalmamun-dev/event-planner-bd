@@ -5,10 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/Root/Root";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
-import PostFeature from "./components/postFeature/PostFeature";
 import Contacts from "./components/about/contact/Contacts";
 import FAQs from "./components/about/faqs/FAQs";
-import Pricing from "./components/about/pricing/Pricing";
 import Journal from "./components/journal/Journal";
 import Events from "./components/events/Events";
 import EventDetails from "./components/events/EventDetails";
@@ -48,11 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/events",
-        element: (
-          <PrivateRoute>
-            <Events></Events>
-          </PrivateRoute>
-        ),
+        element: <Events></Events>,
       },
       {
         path: "/events/:id",

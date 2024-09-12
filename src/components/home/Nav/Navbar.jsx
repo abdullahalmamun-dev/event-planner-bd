@@ -5,7 +5,6 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [articles, setArticles] = useState([]);
-  const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { user, logOut } = useContext(AuthContext);
 
@@ -32,12 +31,10 @@ const Navbar = () => {
   return (
     <div className="bg-[#003366] px-10">
       <nav className="flex flex-col md:flex-row md:justify-between items-center mx-auto text-lg text-[#FFD700] p-4">
-        {/* Logo */}
         <div className="flex items-center mx-auto md:mx-0 mb-4 md:mb-0">
           <img src="logo.png" className="w-20" alt="Logo" />
         </div>
 
-        {/* Hamburger Icon for Mobile */}
         <div className="md:hidden">
           <button
             onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -47,7 +44,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Navigation Links */}
         <div
           className={`flex md:flex-nowrap flex-col md:flex-row gap-4 md:gap-10 mb-4 md:mb-0 relative ${
             showMobileMenu ? "block" : "hidden md:flex"
@@ -56,46 +52,13 @@ const Navbar = () => {
           <Link to={"/"} className="hover:text-white transition duration-200">
             HOME
           </Link>
+
           <Link
-            to={"/journal"}
+            to={"/events"}
             className="hover:text-white transition duration-200"
           >
-            JOURNAL
+            EVENTS
           </Link>
-          <div className="relative">
-            <button
-              className="hover:text-white transition duration-200 flex items-center"
-              onClick={() => setShowDropdown(!showDropdown)}
-            >
-              EVENTS
-              <svg
-                className={`h-4 w-4 ml-2 transition duration-200 ${
-                  showDropdown ? "transform rotate-180" : ""
-                }`}
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-            {showDropdown && (
-              <div className="absolute bg-[#003366] rounded-md shadow-lg mt-2 w-64 z-10 py-2">
-                {articles.map((article) => (
-                  <Link
-                    key={article.id}
-                    className="block px-6 py-3 hover:bg-[#004080]"
-                    to={`/events/${article.id}`}
-                  >
-                    {article.title}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
           <Link
             to={"/faqs"}
             className="hover:text-white transition duration-200"
@@ -116,7 +79,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Sign In / Sign Out Button */}
         <div className="flex justify-center mb-4">
           {user ? (
             <button

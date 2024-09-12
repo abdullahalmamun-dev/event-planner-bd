@@ -5,10 +5,10 @@ const Footer = () => {
     <div className="">
       <div>
         <div className="bg-gradient-to-r from-[#003366] to-[#003366] py-16 text-center">
-          <h2 className="text-2xl uppercase tracking-widest text-[#FFD700] pb-10">
-            Subscribe to Newsletter
+          <h2 className="text-5xl uppercase tracking-widest text-[#FFD700] pb-5">
+            Subscribe to our Newsletter
           </h2>
-          <h1 className="text-3xl font-bold mt-2 text-[#F5F5F5]">
+          <h1 className="text-3xl font-bold mt-2 text-[#F5F5F5] pb-5">
             Want something extra?
           </h1>
           <div className="mt-6 flex justify-center">
