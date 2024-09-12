@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "~@fortawesome/fontawesome-free/css/all.css";
+
 /* .bg-img{
 
     background-image: url("");
@@ -21,4 +22,7 @@
   width: 100%;
   height: 100%;
   transition: opacity 1s ease-in-out;
+}
+.icon-size {
+  font-size: 50px;
 }
