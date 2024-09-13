@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import Navbar from "../home/Nav/Navbar";
-import Footer from "../home/footer/Footer";
 import { AuthContext } from "../../providers/Authprovider";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
 
   const { createUser } = useContext(AuthContext);
 
@@ -20,7 +19,16 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
 
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error.message);
@@ -29,7 +37,6 @@ const Register = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
       <div
         className="hero h-1/2 lg:min-h-screen xl:min-h-screen"
         style={{
@@ -86,13 +93,21 @@ const Register = () => {
                   <button type="submit" className="btn btn-primary font-black">
                     Register
                   </button>
+                  <div className="form-control mt-6">
+                    <button
+                      type="button"
+                      className="btn btn-primary font-black"
+                      onClick={handleGoogleSignIn}
+                    >
+                      Sign In with Google
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <Footer></Footer>
     </div>
   );
 };
