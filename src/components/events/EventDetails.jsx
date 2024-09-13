@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../../providers/Authprovider";
 
-const ArticleDetail = () => {
+const EventDetails = () => {
   const { id } = useParams();
   const [article, setArticle] = useState(null);
+  const { user, bookings, setBookings } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("/Events.json")
@@ -23,13 +25,30 @@ const ArticleDetail = () => {
       });
   }, [id]);
 
+  const handleBooking = () => {
+    if (user) {
+      const bookingDetails = {
+        id: article.id,
+        title: article.title,
+        date: article.date,
+        time: article.time,
+        price: article.price,
+      };
+
+      setBookings((prevBookings) => [...prevBookings, bookingDetails]);
+      alert(`You have booked ${article.title}`);
+    } else {
+      alert("Please sign in to book this event.");
+    }
+  };
+
   if (!article) {
     return <div className="py-10 text-center text-lg">Loading...</div>;
   }
 
   return (
     <div className="py-16 px-4 md:px-20">
-      <div className=" max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <img
           className="w-full h-64 object-cover"
           src={article.picture}
@@ -56,7 +75,13 @@ const ArticleDetail = () => {
           <p className="text-gray-700 mb-4 text-justify leading-10">
             {article.article}
           </p>
-          <div className="mt-4">
+          <div className="mt-4 flex justify-between">
+            <button
+              className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200"
+              onClick={handleBooking}
+            >
+              BOOK NOW
+            </button>
             <button className="bg-[#FFD700] text-[#003366] px-4 py-2 rounded hover:bg-[#FFC107] transition duration-200">
               <a href="/events">Back to Events</a>
             </button>
@@ -67,4 +92,4 @@ const ArticleDetail = () => {
   );
 };
 
-export default ArticleDetail;
+export default EventDetails;
