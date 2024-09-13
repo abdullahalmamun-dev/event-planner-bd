@@ -5,9 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { signIn, signInWithGoogle } = useContext(AuthContext);
-
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signInWithGoogle } = useContext(AuthContext);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -17,7 +15,7 @@ const Register = () => {
     const password = formData.get("password");
 
     createUser(email, password)
-      .then((result) => {
+      .then(() => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -27,7 +25,7 @@ const Register = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then((result) => {
+      .then(() => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -36,77 +34,80 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <div
-        className="hero h-1/2 lg:min-h-screen xl:min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://i.ibb.co.com/myynPHq/diamond-sunset.png)",
-        }}
-      >
-        <div className="">
-          <div className="hero-content flex-col lg:flex-row-reverse">
-            <div className="card bg-base-100 w-full shrink-0 shadow-2xl p-12">
-              <form className="card-body" onSubmit={handleRegister}>
-                <div className="text-center lg:text-center pt-4">
-                  <h1 className="text-4xl font-bold p-10">
-                    Register Your Account
-                  </h1>
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text text-xl">Your Name</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your name"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text text-xl">Email</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email address"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
-                <div className="form-control">
-                  <label className="label">
-                    <span className="label-text text-xl">Password</span>
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Enter your password"
-                    className="input input-bordered"
-                    required
-                  />
-                </div>
-                <div className="form-control mt-6">
-                  <button type="submit" className="btn btn-primary font-black">
-                    Register
-                  </button>
-                  <div className="form-control mt-6">
-                    <button
-                      type="button"
-                      className="btn btn-primary font-black"
-                      onClick={handleGoogleSignIn}
-                    >
-                      Sign In with Google
-                    </button>
-                  </div>
-                </div>
-              </form>
+    <div className="flex justify-center items-center h-100% my-10 mx-2 bg-white">
+      <div className="bg-gray-200 rounded-lg shadow-lg p-8 w-full max-w-md ">
+        <h1 className="text-xl md:text-3xl font-bold mb-6 text-center text-[#003366]">
+          REGISTER YOUR ACCOUNT
+        </h1>
+        <form onSubmit={handleRegister}>
+          <div className="mb-4">
+            <label
+              className="block font-bold mb-5 text-[#003366]"
+              htmlFor="name"
+            >
+              Name
+            </label>
+            <input
+              className="w-full px-3 py-2 border  border-gray-300 rounded focus:outline-none focus:border-[#FFD700]"
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label
+              className="block font-bold mb-5 text-[#003366]"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#FFD700]"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              className="block font-bold mb-5 text-[#003366]"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#FFD700]"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div className="grid gap-5 text-center md:flex justify-center md:justify-between items-center">
+            <div>
+              <button
+                className="text-sm bg-[#FFD700] hover:bg-[#FFC107] text-[#003366] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
+              >
+                REGISTER
+              </button>
+            </div>
+            <div>
+              <button
+                className="text-sm bg-[#FFD700] hover:bg-[#FFC107] text-[#003366] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button"
+                onClick={handleGoogleSignIn}
+              >
+                REGISTER WITH GOOGLE
+              </button>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

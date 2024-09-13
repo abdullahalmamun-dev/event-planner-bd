@@ -14,7 +14,7 @@ const Login = () => {
     const password = formData.get("password");
 
     signIn(email, password)
-      .then((result) => {
+      .then(() => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -24,7 +24,7 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then((result) => {
+      .then(() => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -33,78 +33,71 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <div
-        className="hero h-1/2 lg:min-h-screen xl:min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://i.ibb.co.com/myynPHq/diamond-sunset.png)",
-        }}
-      >
-        <div>
-          <div className="hero bg-base-200 w-full p-10 h-full">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-              <div className="card bg-base-100 w-full shrink-0 shadow-2xl p-12">
-                <form className="card-body" onSubmit={handleLogin}>
-                  <div className="text-center lg:text-center pt-4">
-                    <h1 className="text-4xl font-bold p-10">
-                      Login Your Account
-                    </h1>
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-xl">Email</span>
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="email"
-                      className="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div className="form-control">
-                    <label className="label">
-                      <span className="label-text text-xl">Password</span>
-                    </label>
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder="password"
-                      className="input input-bordered"
-                      required
-                    />
-                  </div>
-                  <div className="form-control mt-6">
-                    <button
-                      type="submit"
-                      className="btn btn-primary font-black"
-                    >
-                      Login
-                    </button>
-                    <div className="form-control mt-6">
-                      <button
-                        type="button"
-                        className="btn btn-primary font-black"
-                        onClick={handleGoogleSignIn}
-                      >
-                        Sign In with Google
-                      </button>
-                    </div>
-
-                    <div className="text-center mt-4">
-                      <p>
-                        Don't Have An Account?{" "}
-                        <a href="/register" className="text-xl">
-                          <span className="text-red-900">Register</span>
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-                </form>
-              </div>
+    <div className="flex justify-center items-center my-10 h-100% bg-white">
+      <div className="bg-white rounded-lg shadow-lg p-14 w-full max-w-md bg-gray-200">
+        <h1 className="text-xl md:text-4xl font-bold mb-6 text-center text-[#003366]">
+          SIGN IN INTO YOUR ACCOUNT
+        </h1>
+        <form onSubmit={handleLogin}>
+          <div className="mb-4">
+            <label
+              className="block font-bold mb-2 text-[#003366]"
+              htmlFor="email"
+            >
+              Email
+            </label>
+            <input
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#FFD700]"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label
+              className="block font-bold mb-2 text-[#003366]"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-[#FFD700]"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div className="text-center grid md:flex gap-5 md:justify-between items-center">
+            <div>
+              <button
+                className="text-sm md:text-lg  bg-[#FFD700] hover:bg-[#FFC107] text-[#003366] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
+              >
+                SIGN IN
+              </button>
+            </div>
+            <div>
+              <button
+                className="text-sm md:text-lg bg-[#FFD700] hover:bg-[#FFC107] text-[#003366] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button"
+                onClick={handleGoogleSignIn}
+              >
+                Sign In with Google
+              </button>
             </div>
           </div>
+        </form>
+        <div className="text-center mt-4">
+          <p className="text-[#003366]">
+            Don't Have An Account?{" "}
+            <a href="/register" className="text-red-900 hover:text-red-700">
+              Register
+            </a>
+          </p>
         </div>
       </div>
     </div>

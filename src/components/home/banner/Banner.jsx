@@ -3,12 +3,12 @@ import { FaCalendarAlt, FaUsers, FaMapMarkerAlt } from "react-icons/fa";
 
 const Banner = () => {
   const images = [
-    "/1.jpg",
-    "/2.jpg",
-    "/3.jpg",
-    "4.jpg",
-    "banner.jpg",
-    "shardayyy-photography-fJzmPe-a0eU-unsplash.jpg",
+    "/1.webp",
+    "/2.webp",
+    "/3.webp",
+    "4.webp",
+    "banner.webp",
+    "shardayyy-photography-fJzmPe-a0eU-unsplash.webp",
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -38,7 +38,7 @@ const Banner = () => {
       ))}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="bg-[#003366] bg-opacity-80 p-10 rounded-lg">
-          <h2 className="text-3xl text-[#FFD700] text-center font-bold mb-4">
+          <h2 className="text-3xl text-[#FFD700] text-center font-bold mb-4 uppercase">
             Plan Your Perfect Event
           </h2>
           <div className="flex justify-center space-x-10">

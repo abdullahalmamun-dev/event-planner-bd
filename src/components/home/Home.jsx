@@ -1,15 +1,16 @@
 import React from "react";
 import Banner from "./banner/Banner";
 import Card from "./card/Card";
-import MakingDifference from "./makingdifference/MakingDifference";
-import Login from "../login/Login";
+import Services from "../about/Services/Services";
+import UpcomingEvents from "./upcomingEvents/upcomingEvents";
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      {/* <MakingDifference></MakingDifference> */}
       <Card></Card>
+      <Services></Services>
+      <UpcomingEvents></UpcomingEvents>
     </div>
   );
 };

@@ -7,7 +7,6 @@ import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Contacts from "./components/about/contact/Contacts";
 import FAQs from "./components/about/faqs/FAQs";
-import Journal from "./components/journal/Journal";
 import Events from "./components/events/Events";
 import EventDetails from "./components/events/EventDetails";
 import Login from "./components/login/Login";
@@ -36,14 +35,6 @@ const router = createBrowserRouter([
       {
         path: "/faqs",
         element: <FAQs></FAQs>,
-      },
-      {
-        path: "/journal",
-        element: (
-          <PrivateRoute>
-            <Journal></Journal>
-          </PrivateRoute>
-        ),
       },
       {
         path: "/events",
