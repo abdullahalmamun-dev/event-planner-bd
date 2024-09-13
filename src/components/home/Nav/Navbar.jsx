@@ -31,7 +31,7 @@ const Navbar = () => {
     <div className="bg-[#003366] px-4">
       <nav className="flex items-center justify-between p-4">
         <div className="flex items-center">
-          <img src="/logo.webp" className="w-20" alt="Logo" />
+          <img src="navlink.png" className="w-20" alt="Logo" />
         </div>
 
         <div className="hidden md:flex flex-grow justify-center">
