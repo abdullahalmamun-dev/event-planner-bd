@@ -2,9 +2,9 @@ import React from "react";
 
 const Contacts = () => {
   return (
-    <div className="bg-[#F5F5F5] p-4 md:p-10">
-      <div className="w-1/2 p-4 md:space-y-5 mx-auto">
-        <div className="text-lg md:text-2xl border-8 p-20">
+    <div className="bg-[#F5F5F5] w-full pt-10 md:p-10">
+      <div className="w-4/5 md:w-2/3 md:p-4 mx-auto">
+        <div className="text-lg md:text-2xl border-8 md:p-20 p-5">
           <p className="text-2xl md:text-4xl font-bold text-[#003366] mb-10 text-center uppercase leading-1">
             Contact Information
           </p>
@@ -13,7 +13,7 @@ const Contacts = () => {
           </p>
           <p className="text-gray-700 mb-2 text-justify leading-10">
             <strong>Address:</strong> House: 95, Road: 13, Nobinagar Housing,
-            Mohammadpur, Dhaka- 1207
+            Mohammadpur, Dhaka- 1207, Bangladesh
           </p>
           <p className="text-gray-700 mb-2 text-justify leading-10">
             <strong>Email:</strong> info@culturepress.com
@@ -93,7 +93,7 @@ const Contacts = () => {
           </div>
         </div>
       </div>
-      <div className="mt-8 md:mt-20 px-5">
+      <div className="mt-8 md:mt-20 px-5 pb-10">
         <p className="text-center font-bold text-[#003366] mb-4">
           Social Links
         </p>

@@ -76,7 +76,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        <div className="hidden md:block md:flex items-center relative">
+        <div className="md:flex items-center relative">
           {user ? (
             <div className="flex items-center">
               {user.photoURL ? (
@@ -97,18 +97,18 @@ const Navbar = () => {
               {showDropdown && (
                 <div
                   ref={dropdownRef}
-                  className="hidden md:absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10"
+                  className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10"
                 >
                   <Link
                     to="/profile"
-                    className="hidden md:block px-4 py-2 text-[#003366] hover:bg-[#FFD700] transition duration-200"
+                    className="block px-4 py-2 text-[#003366] hover:bg-[#FFD700] transition duration-200"
                     onClick={() => setShowDropdown(false)}
                   >
                     Profile
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="hidden md:block w-full text-left px-4 py-2 text-[#003366] hover:bg-[#FFD700] transition duration-200"
+                    className=" block w-full text-left px-4 py-2 text-[#003366] hover:bg-[#FFD700] transition duration-200"
                   >
                     SIGN OUT
                   </button>
@@ -161,7 +161,7 @@ const Navbar = () => {
         >
           CONTACT US
         </Link>
-        <div className="mt-4">
+        {/* <div className="mt-4">
           {user ? (
             <div className="flex flex-col items-center">
               <button
@@ -179,7 +179,7 @@ const Navbar = () => {
               SIGN IN
             </Link>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

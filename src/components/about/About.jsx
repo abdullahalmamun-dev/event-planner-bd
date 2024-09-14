@@ -3,22 +3,20 @@ import React from "react";
 const About = () => {
   return (
     <div className="relative">
-      {/* Hero Section */}
       <div
         className="bg-cover bg-center h-[50vh] flex items-center justify-center"
         style={{
-          backgroundImage: "url('3.jpg')",
+          backgroundImage: "url('3.webp')",
         }}
       >
         <h2 className="text-4xl font-bold text-white uppercase">ABOUT US</h2>
       </div>
 
-      {/* Main Content */}
       <div className="bg-[#F5F5F5] p-6 md:p-20">
-        <h3 className="text-3xl md:text-5xl font-bold text-[#003366] mb-4 text-center my-10">
+        <h3 className="text-3xl md:text-5xl font-bold text-[#003366] mb-4 text-center md:my-10">
           Who We Are
         </h3>
-        <p className="text-lg md:text-2xl text-gray-700 mb-10 mt-10 text-justify">
+        <p className="text-lg md:text-2xl text-gray-700 mb-10 md:mt-10 text-justify">
           At Culture Press, we believe in the power of events to bring people
           together. Founded in 2023, our journey began with a passion for
           creating unforgettable experiences. Our mission is to transform your
