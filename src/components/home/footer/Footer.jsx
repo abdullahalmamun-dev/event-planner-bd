@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </footer>
         <div className="text-[#F5F5F5] copyright text-center py-5 text-sm justify-left bg-gradient-to-r from-[#003366] to-[#003366]">
-          © 2025 Culture Press. All rights reserved. Developed By Emperal Tech.
+          © 2025 Culture Press. All rights reserved. Developed By Abdullah Al Mamun.
         </div>
       </div>
     </div>
